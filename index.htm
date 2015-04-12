@@ -1,0 +1,103 @@
+
+<!DOCTYPE html><html class=''>
+<head>
+<meta charset='UTF-8'>
+<title>My love - NTB</title>
+<style class="cp-pen-styles">body {
+  background: tomato;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+#highlight {
+  display: inline-block;
+  border: 3px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.c {
+  position: absolute;
+  top: 40%;
+  margin-top: -15px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+div#highlight:hover {
+  background: white;
+  color: tomato;
+}
+
+div#highlight:hover > strong {
+  margin-top: -75px;
+}
+
+span {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none; 
+}
+</style>
+</head>
+<body>
+<script>
+
+    CountDownTimer('countdown');
+
+    function CountDownTimer(id)
+    {
+        var d = new Date();
+		var day = d.getDate();
+		var month = d.getMonth();
+		if (day > 18) month += 1;
+		var end = new Date(d.getFullYear(), month, 18, 0, 0, 0, 0);
+        var _day = 24 * 60 * 60 * 1000;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'Happy Celebration day!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            
+
+            document.getElementById(id).innerHTML = days + ' days remaining';
+            
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+
+<span class="c">
+I
+<div id="highlight">
+    <span>love 
+      <b>❤</b>	  
+  </span>
+</div>
+  you!
+  
+</span>
+<div id="wrapper" style="position: absolute;width:100%;text-align: center; top:50%">    
+    <div id="countdown">...</div>
+</div>
+</body></html>
